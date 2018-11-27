@@ -1,17 +1,11 @@
 body{
-	background-color: #ffeeee;
-}
-#backImage{
-	width:100%;
-	height:92%;
-	position: absolute;
-	z-index: -1;
-	opacity: 0.4;
+	background-color: rgba(200,90,0,.3);
 }
 
 header{
-	background-color: #ffe1e1;
+	background: linear-gradient(#aaaaaa 90%,grey);
 	box-shadow: 2px 2px black;
+	color:white;
 }
 
 #logo,h1{
@@ -21,7 +15,7 @@ header{
 #logo{
 	height: 100px;
 	width:100px;
-	background-image:url(../images/cropped-insert-logo-here.png);
+	background-image:url(images/cropped-insert-logo-here.png);
 	background-repeat: no-repeat;
 	background-size:contain;
 	margin-left:2%;
