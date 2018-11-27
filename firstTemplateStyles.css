@@ -1,0 +1,215 @@
+body{
+	background-color: #ffeeee;
+}
+#backImage{
+	width:100%;
+	height:92%;
+	position: absolute;
+	z-index: -1;
+	opacity: 0.4;
+}
+
+header{
+	background-color: #ffe1e1;
+	box-shadow: 2px 2px black;
+}
+
+#logo,h1{
+	display:inline-block;
+}
+
+#logo{
+	height: 100px;
+	width:100px;
+	background-image:url(../images/cropped-insert-logo-here.png);
+	background-repeat: no-repeat;
+	background-size:contain;
+	margin-left:2%;
+	margin-top: 2%;
+}
+
+#title{
+	position: relative;
+	top:-30px;
+	margin-left: 30px;
+	font-family: sans-serif;
+	font-size: 40px;
+}
+
+#jq-menu{
+	display:none;
+}
+
+#mainNavigation{
+	z-index: 2;
+	position: fixed;
+	right:300px;
+	top:90px;
+}
+
+nav a li{
+	position:relative;
+	right:-60%;
+	display: inline-block;
+    font-family: sans-serif;
+    font-size: 9px;
+    text-align: center;
+    background-color: #3e4344;
+    border: 1px solid #000;
+    width:60px;
+    font-size: 12px;
+    margin-left:20px;
+    padding: 20px 10px 20px 10px;
+}
+
+nav a li:hover{
+	background-color: #36b0ca;
+}
+
+a{
+	color: white;
+	text-decoration: none;
+}
+
+
+main{
+	margin-top:120px;
+}
+h2{
+	margin-left: 60%;
+	padding:15px;
+	border:solid #555555;
+	font-family:sans-serif;
+	width:content-width;
+	font-size: 30px;
+	background-color:white;
+}
+
+footer{
+	position: absolute;
+	bottom:0px;
+	background-color: white;
+	border: solid #aaaaaa;
+	width:100%;
+	height:50px;
+}
+footer h3{
+	font-family: arial;
+	text-align: center;
+}
+
+#slideShow{
+	position: absolute;
+	height: 170px;
+	width:200px;
+	bottom:19%;
+	left:12%;
+	padding:6px;
+	border:solid #555555;
+	background-color: white;
+}
+.toggleBox{
+	height:150px;
+	width:200px;
+	text-align: center;
+	display: none;
+	color: white;
+	font-family: arial;
+	font-size: 25px;
+	line-height: 150px;
+}
+
+#home{
+    background-color: red;
+    display:block;
+}
+#second{
+    background-color:blue;
+}
+#third{
+    background-color:green;
+}
+#fourth{
+    background-color: purple;
+}
+#circles{
+	position: absolute;
+	bottom:-15px;
+}
+#circles li{
+	position: relative;
+	display:inline-block;
+	padding:7px;
+	border:solid black;
+	border-radius:25px;
+}
+
+#contactForm{
+	position: absolute;
+	left:7%;
+	bottom: 12%;
+	width:fit-content;
+	padding:16px;
+	font-family: arial;
+	background-color: white;
+	border:solid #555555;
+	border-radius:13px;
+}
+.contact{
+	margin:13px;
+}
+
+@media only screen and (max-width: 768px){
+	#logo{
+		height:60px;
+		width:60px;
+	}
+	#title{
+		position: absolute;
+		top:18px;
+		font-size:20px;
+	}
+	nav{
+		width:100%;
+	}
+	#jq-menu{
+		cursor: pointer;
+		position: absolute;
+		left:0px;
+		top:-7px;
+		display:block;
+		width:50%;
+		font-family: tahoma;
+		font-size: 24px;
+		color:white;
+		line-height: 50px;
+		padding:5px 30% 5px 90%;
+		text-align: center;
+		background-color: orange;
+
+	}
+	#mainNavigation ul{
+		display: none;
+		margin-top: 40px;
+		background-color: white;
+		padding:15px 100% 10px 100%;
+	}
+	nav a li{
+		background:none;
+		border:none;
+		color:black;
+	}
+	h2{
+		font-size: 16px;
+	}
+	footer h3{
+		font-size: 13px;
+	}
+	#contactForm{
+		padding:5px;
+		width:180px;
+	}
+	.contact{
+		margin:5px;
+	}
+}
