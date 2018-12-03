@@ -51,6 +51,7 @@ const autoScroll=(scrolling)=>{
 
 window.onload=function(){
 
+	//For collapsing menu
 	setInterval(function(){
 		if($(window).width()>770){
 			$('#linkList').show();
@@ -63,6 +64,23 @@ window.onload=function(){
 		});
 	});
 
+	//For scrolling navigation
+	const navBar=document.getElementById('mainNavigation');
+	window.addEventListener('scroll',function(){
+		if(window.scrollY>50){
+			if($(window).width()<770){
+				navBar.style.top='50px';
+			}
+			else{
+				navBar.style.top=0;
+			}
+		}
+		else{
+			navBar.style.top='130px';
+		}
+	});
+
+	//For slideshow
 	const home=document.getElementById('home');
 	const next=document.getElementById('second');
 	const third=document.getElementById('third');
