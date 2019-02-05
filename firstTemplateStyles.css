@@ -1,5 +1,5 @@
 body{
-	background-color: rgba(200,90,0,.3);
+	background-color:#dfdfdf;
 }
 main{
 	margin-bottom:800px;
@@ -38,13 +38,12 @@ header{
 }
 
 #mainNavigation{
+	position: sticky;
 	z-index: 2;
-	position: fixed;
 	right:0px;
-	top:130px;
-	width:500px;
-	height:60px;
-	padding:0px 50px 0px 1200px;
+	top:0px;
+	width:100%;
+	height:33px;
 	background-color:#3e4344;
 }
 
@@ -79,7 +78,7 @@ h2{
 	border:solid #555555;
 	font-family:sans-serif;
 	width:content-width;
-	font-size: 30px;
+	font-size: 20px;
 	background-color:white;
 }
 
@@ -163,43 +162,18 @@ footer{
 		top:18px;
 		font-size:20px;
 	}
-	#jq-menu{
-		cursor: pointer;
-		position: absolute;
-		top:-50px;
-		right:0px;
-		display:block;
-		font-family: tahoma, arial;
-		font-size: 24px;
-		color:white;
-		line-height: 50px;
-		width:470px;
-		height:50px;
-		padding-left: 100%;
-		padding-bottom: 9px;
-		text-align: center;
-		background-color: orange;
+	#contactForm{
+		position: static;
+		padding:5px;
+		width:190px;
 	}
-	#mainNavigation{
-		background:none;
-	}
-	#mainNavigation ul{
-		z-index: -1;
-		position: relative;
-		top:-30px;
-		display: none;
-		margin-top: 40px;
-		background-color: white;
-		padding:15px 60% 10px 50%;
-	}
-	nav a li{
-		background:none;
-		border:none;
-		color:black;
-	}
+}
+
+@media only screen and (max-width: 568px){
 	main{
 		position: relative;
 		top:-30px;
+		padding:0px 20% 0px 20%;
 	}
 	main > *{
 		margin:5px 5% 5px 5%;
@@ -213,12 +187,43 @@ footer{
 	#slideShow{
 		position:static;
 	}
-	#contactForm{
-		position: static;
-		padding:5px;
-		width:180px;
-	}
 	.contact{
 		margin:5px;
+	}
+}
+
+@media only screen and (max-width:500px){
+	#jq-menu{
+		cursor: pointer;
+		position: sticky;
+		top:-50px;
+		display:block;
+		font-family: tahoma, arial;
+		font-size: 24px;
+		color:white;
+		line-height: 50px;
+		padding-left: 20%;
+		padding-right: 30%;
+		height:50px;
+		padding-bottom: 9px;
+		text-align: center;
+		background-color: #223;
+	}
+	#mainNavigation{
+		background:none;
+	}
+	#mainNavigation ul{
+		z-index: -1;
+		position: relative;
+		top:-40px;
+		display: none;
+		margin-top: 40px;
+		background-color: white;
+		padding:15px 30% 10px 30%;
+	}
+	nav a li{
+		background:none;
+		border:none;
+		color:black;
 	}
 }

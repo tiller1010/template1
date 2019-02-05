@@ -53,7 +53,7 @@ window.onload=function(){
 
 	//For collapsing menu
 	setInterval(function(){
-		if($(window).width()>770){
+		if($(window).width()>500){
 			$('#linkList').show();
 		}
 	},10);
@@ -62,22 +62,6 @@ window.onload=function(){
 		$('#jq-menu').click(function(){
 			$('#linkList').slideToggle(500);
 		});
-	});
-
-	//For scrolling navigation
-	const navBar=document.getElementById('mainNavigation');
-	window.addEventListener('scroll',function(){
-		if(window.scrollY>50){
-			if($(window).width()<770){
-				navBar.style.top='50px';
-			}
-			else{
-				navBar.style.top=0;
-			}
-		}
-		else{
-			navBar.style.top='130px';
-		}
 	});
 
 	//For slideshow
