@@ -208,12 +208,13 @@ footer{
 		padding-bottom: 9px;
 		text-align: center;
 		background-color: #223;
+		z-index: 4;
 	}
 	#mainNavigation{
 		background:none;
 	}
 	#mainNavigation ul{
-		z-index: -1;
+		z-index: 3;
 		position: relative;
 		top:-40px;
 		display: none;
