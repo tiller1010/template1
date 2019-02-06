@@ -6,7 +6,7 @@ main{
 }
 
 header{
-	background: linear-gradient(#aaaaaa 90%,grey);
+	background: linear-gradient(#aad 90%,grey);
 	box-shadow: 2px 2px black;
 	color:white;
 }
@@ -38,6 +38,7 @@ header{
 }
 
 #mainNavigation{
+  	position: -webkit-sticky;
 	position: sticky;
 	z-index: 2;
 	right:0px;
@@ -195,6 +196,7 @@ footer{
 @media only screen and (max-width:500px){
 	#jq-menu{
 		cursor: pointer;
+ 		position: -webkit-sticky;
 		position: sticky;
 		top:-50px;
 		display:block;
@@ -226,5 +228,11 @@ footer{
 		background:none;
 		border:none;
 		color:black;
+	}
+}
+
+@media only screen and (max-width: 350px){
+	#title{
+		font-size: 16px;
 	}
 }
