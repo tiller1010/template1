@@ -1,54 +1,3 @@
-function evaporate(element){
-	i=1;
-	let fader=setInterval(function(){
-		element.style.opacity=i-0.1;
-		i=i-0.1;
-		if(i<0){
-			i=0;
-			clearInterval(fader);
-			element.style.display='none';
-		}
-	},20);
-}
-
-function materialize(element){
-	i=0;
-	let fader=setInterval(function(){
-		element.style.display='block';
-		element.style.opacity=i+0.1;
-		i=i+0.1;
-		if(i>1){
-			i=1;
-			clearInterval(fader);
-			currentPage=element;
-		}
-	},20);
-}
-
-const changePage=(target)=>{
-	if(target!=currentPage){
-		evaporate(currentPage);
-		currentPage=target
-		setTimeout(function(){
-			materialize(currentPage);
-		},400);
-	}
-}
-
-const autoScroll=(scrolling)=>{
-	if(scrolling==true){
-		let scroller=setInterval(function(){
-			i=pages.indexOf(currentPage);
-			if(i==pages.length-1){
-				changePage(home);
-			}
-			else{
-				changePage(pages[i+1]);
-			}
-		},5000);
-	}
-}
-
 window.onload=function(){
 
 	//For collapsing menu
@@ -64,32 +13,74 @@ window.onload=function(){
 		});
 	});
 
-	//For slideshow
-	const home=document.getElementById('home');
-	const next=document.getElementById('second');
-	const third=document.getElementById('third');
-	const fourth=document.getElementById('fourth');
+	//For carousel
+	const carouselImages=document.querySelectorAll('.carouselImage');
+	const track=document.querySelector('.carouselTrack');
+	const slides=Array.from(track.children);
+	const previousButton=document.querySelector('.carouselButtonLeft');
+	const nextButton=document.querySelector('.carouselButtonRight');
+	const navCircles=document.querySelector('.carouselNav');
+	const dots = Array.from(navCircles.children);
 
-	currentPage=home;
-	pages=[home,next,third,fourth];
-	
-	const page1=document.getElementById('pg1');
-	const page2=document.getElementById('pg2');
-	const page3=document.getElementById('pg3');
-	const page4=document.getElementById('pg4');
-	
-	page1.addEventListener('click',function(){
-		changePage(home);
+	const slideSize=slides[0].getBoundingClientRect();
+	const slideWidth=slideSize.width;
+
+
+	//Display all once loaded
+	const displayImages=(image,index)=>{	
+		image.style.display='block';
+	}
+
+	//Arrangement left to right
+	const setSlidePosition=(slide,index)=>{
+		slide.style.left=slideWidth*index+'px';
+	}
+
+	carouselImages.forEach(displayImages);
+	slides.forEach(setSlidePosition);
+
+	const moveToSlide=(track, currentSlide, targetSlide)=>{
+		track.style.transform='translateX(-'+targetSlide.style.left+')';
+		currentSlide.classList.remove('currentSlide');
+		targetSlide.classList.add('currentSlide');
+	}
+
+	const upDateDots=(currentDot, targetDot)=>{
+		currentDot.classList.remove('currentSlide')
+		targetDot.classList.add('currentSlide')
+	}
+
+
+	nextButton.addEventListener('click', event=>{
+		const currentSlide=track.querySelector('.currentSlide');
+		const nextSlide=currentSlide.nextElementSibling;
+		const currentDot=navCircles.querySelector('.currentSlide');
+		const nextDot=currentDot.nextElementSibling;
+
+		moveToSlide(track,currentSlide,nextSlide);
+		upDateDots(currentDot, nextDot);
 	});
-	page2.addEventListener('click',function(){
-		changePage(next);
+
+	previousButton.addEventListener('click', event=>{
+		const currentSlide=track.querySelector('.currentSlide');
+		const previousSlide=currentSlide.previousElementSibling;
+		const currentDot=navCircles.querySelector('.currentSlide');
+		const previousDot=currentDot.previousElementSibling;
+
+		moveToSlide(track,currentSlide,previousSlide);
+		upDateDots(currentDot, previousDot);
 	});
-	page3.addEventListener('click',function(){
-		changePage(third);
-	});
-	page4.addEventListener('click',function(){
-		changePage(fourth);
-	});
-	
-	autoScroll(true);
+
+	//Indicators to change slide on click
+	navCircles.addEventListener('click',event=>{
+		const targetDot=event.target.closest('button');
+		if(!targetDot) return;
+		const currentSlide=track.querySelector('.currentSlide');
+		const currentDot=navCircles.querySelector('.currentSlide');
+		const targetIndex=dots.findIndex(dot=> dot===targetDot);
+		const targetSlide=slides[targetIndex];
+
+		moveToSlide(track, currentSlide, targetSlide);
+		upDateDots(currentDot, targetDot);
+	})
 }
