@@ -76,11 +76,24 @@ main{
 h2{
 	margin-left: 60%;
 	padding:15px;
-	border:solid #55555511;
+	border:solid #55555577;
 	font-family:sans-serif;
 	width:content-width;
 	font-size: 20px;
 	background-color:white;
+	text-align: center;
+}
+
+p{
+	margin-left: 20px;
+	margin-right: 50%;
+	padding:15px;
+	border:solid #55555511;
+	font-family:sans-serif;
+	width:content-width;
+	font-size: 16px;
+	background-color:white;
+	text-indent: 22px;
 }
 
 footer{
@@ -188,6 +201,27 @@ button{
 }
 /*End carousel*/
 
+#address{
+	border:solid #55555577;
+	width:500px;
+	height:100%;
+	padding-top: 10px;
+	margin-left:40px;
+	background-color: white;
+}
+#mapImage{
+	transform: translateY(4px);
+	width:500px;
+}
+.addressLabel{
+	font-family: sans-serif;
+	margin-left: 5px;
+}
+.addressValue{
+	float:right;
+	margin-right: 5px;
+}
+
 #contactForm{
 	position: absolute;
 	left:7%;
@@ -239,6 +273,19 @@ button{
 		transform: translate(5px,0);
 		width:300px;
 		height:200px;
+	}
+	.carouselIndicator{
+		padding:0;
+		width:8px;
+		height:9px;
+		margin:0 6px;
+	}
+	#address{
+		width:90%;
+		margin:auto;
+	}
+	#mapImage{
+		width:100%;
 	}
 	#contactForm{
 		width:90%;
