@@ -306,9 +306,8 @@ button{
 		font-family: tahoma, arial;
 		font-size: 24px;
 		color:white;
-		line-height: 50px;
-		padding-left: 20%;
-		padding-right: 30%;
+		line-height: 55px;
+		padding: 0 auto;
 		height:50px;
 		padding-bottom: 9px;
 		text-align: center;
@@ -325,12 +324,22 @@ button{
 		display: none;
 		margin-top: 40px;
 		background-color: white;
-		padding:15px 30% 10px 30%;
 	}
 	nav a li{
+		width:100%;
+		display: block;
+		margin-left:auto;
+		margin-right: auto;
+		margin: 15px auto;
 		background:none;
 		border:none;
 		color:black;
+		margin:0;
+		text-align: center;
+		padding: 15px 0;
+	}
+	#linkList{
+		padding:0;
 	}
 }
 
