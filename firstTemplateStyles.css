@@ -1,5 +1,6 @@
 body{
 	background-color:#dfdfdf;
+	margin: 0;
 }
 main{
 	margin-bottom:800px;
@@ -7,7 +8,6 @@ main{
 
 header{
 	background: linear-gradient(#aad 90%,grey);
-	box-shadow: 2px 2px black;
 	color:white;
 }
 
@@ -47,14 +47,16 @@ header{
 	height:33px;
 	background-color:#3e4344;
 }
+#linkList{
+	margin: 0;
+}
 
 nav a li{
 	display: inline-block;
     font-family: sans-serif;
-    font-size: 9px;
     text-align: center;
     width:60px;
-    font-size: 12px;
+    font-size: 1.1em;
     line-height: 3px;
     margin-left:20px;
     padding: 15px 10px 15px 10px;
@@ -69,10 +71,6 @@ a{
 	text-decoration: none;
 }
 
-
-main{
-	margin-top:120px;
-}
 h2{
 	margin-left: 60%;
 	padding:15px;
@@ -98,9 +96,9 @@ p{
 
 footer{
 	background-color: white;
-	border: solid #aaaaaa;
+	border-top: solid #aaaaaa;
 	width:100%;
-	height:50px;
+	min-height:50px;
 	font-family: arial;
 	text-align: center;
 }
@@ -121,17 +119,24 @@ button{
 	cursor: pointer;
 }
 
+.carousel-container{
+	background-color: #ccc;
+
+}
+
 .carousel{
 	position: relative;
-	height:300px;
-	width:400px;
-	transform: translate(100px,-150px);
+	top: 20px;
+	height:600px;
+	width:100%;
+	max-width: 800px;
+	margin: -20px auto 150px auto;
 }
 
 .carouselImage{
 	display: none;
 	width:100%;
-	height:100%;
+	height: 100%;
 }
 
 .carouselTrackContainer{
@@ -159,31 +164,39 @@ button{
 
 .carouselButtonLeft{
 	position: absolute;
-	left:-20px;
 	top:50%;
 	transform: translateY(-50%);
 	z-index: 2;
-	height:100px;
+	height:240px;
+	width: 30px;
 	border: 0;
-	background-color: rgba(0,0,50,.2);
+	background-color: #aaaaaaaa;
 }
 
 .carouselButtonRight{
 	position: absolute;
-	right:-20px;
 	top:50%;
+	right: 0;
 	transform: translateY(-50%);
 	z-index: 2;
-	height:100px;
+	height:240px;
+	width: 30px;
 	border: 0;
-	background-color: rgba(0,0,50,.2);
+	background-color: #aaaaaaaa;
+}
+
+.carousel > button{
+	transition: background-color .5s;
+}
+
+.carousel > button:hover{
+	background-color: #fff;
 }
 
 .carouselNav{
-	position: absolute;
-	bottom:-28px;
 	width:100%;
 	padding:5px 0;
+	background: #aaa;
 	text-align: center;
 }
 
@@ -192,8 +205,14 @@ button{
 	border:0;
 	border-radius: 50%;
 	background:grey;
-	height:10px;
-	width:10px;
+	height:11px;
+	width:11px;
+	padding: 0;
+	transition: background .5s;
+}
+
+.carouselIndicator:hover{
+	background: #fff;
 }
 
 .carouselIndicator.currentSlide{
@@ -236,19 +255,18 @@ button{
 	margin:13px;
 }
 
-@media only screen and (max-width: 960px){
+@media only screen and (max-width: 1000px){
 	#logo{
 		height:60px;
 		width:60px;
 	}
 	#title{
 		position: absolute;
-		top:18px;
-		font-size:20px;
+	    top: 6px;
+	    font-size: 28px;
 	}
 	main{
-		position: relative;
-		top:-70px;
+		margin-top: 50px;
 	}
 	main > *{
 		margin:5px 0 5px 0;
@@ -257,12 +275,14 @@ button{
 		position: static;
 	}
 	.carousel{
-		transform: translate(0,0);
-		margin:auto;
+		margin-top: -70px;
+	}
+	.carouselIndicator{
+		height: 12px;
 	}
 }
 
-@media only screen and (max-width: 580px){
+@media only screen and (max-width: 610px){
 	h2{
 		font-size: 16px;
 	}
@@ -270,9 +290,7 @@ button{
 		font-size: 13px;
 	}
 	.carousel{
-		transform: translate(5px,0);
-		width:300px;
-		height:200px;
+		height:320px;
 	}
 	.carouselIndicator{
 		padding:0;
@@ -288,7 +306,6 @@ button{
 		width:100%;
 	}
 	#contactForm{
-		width:90%;
 		margin:auto;
 	}
 	.contact{
@@ -330,26 +347,16 @@ button{
 		display: block;
 		margin-left:auto;
 		margin-right: auto;
-		margin: 15px auto;
 		background:none;
 		border:none;
 		color:black;
-		margin:0;
 		text-align: center;
 		padding: 15px 0;
 	}
 	#linkList{
 		padding:0;
 	}
-}
-
-@media only screen and (max-width: 350px){
-	#title{
-		font-size: 16px;
-	}
 	.carousel{
-		width:270px;
-		height:170px;
+		margin-top: -43px;
 	}
-	
 }

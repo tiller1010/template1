@@ -22,9 +22,6 @@ window.onload=function(){
 	const navCircles=document.querySelector('.carouselNav');
 	const dots = Array.from(navCircles.children);
 
-	const slideSize=slides[0].getBoundingClientRect();
-	const slideWidth=slideSize.width;
-
 
 	//Display all once loaded
 	const displayImages=(image,index)=>{	
@@ -33,9 +30,12 @@ window.onload=function(){
 
 	//Arrangement left to right
 	const setSlidePosition=(slide,index)=>{
+		let slideSize=slides[0].getBoundingClientRect();
+		let slideWidth=slideSize.width;
 		slide.style.left=slideWidth*index+'px';
 	}
 
+	//Display images in a row
 	carouselImages.forEach(displayImages);
 	slides.forEach(setSlidePosition);
 
@@ -82,5 +82,10 @@ window.onload=function(){
 
 		moveToSlide(track, currentSlide, targetSlide);
 		upDateDots(currentDot, targetDot);
-	})
+	});
+
+	// Fix carousel on resize
+	window.onresize = function(){
+		slides.forEach(setSlidePosition);
+	}
 }
