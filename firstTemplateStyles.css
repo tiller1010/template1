@@ -11,6 +11,10 @@ header{
 	color:white;
 }
 
+i{
+	font-size: 2em !important;
+}
+
 #logo,h1{
 	display:inline-block;
 }
